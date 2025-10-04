@@ -15,17 +15,10 @@ const calcResults = () => ROUND_OPTIONS.map((options) =>
 )
 
 const calcAllResults = () => {
-  const picked: number[] = [];
-  const result = ROUND_ALL_OPTIONS.map((options) => {
-    while (true) {
-      const choice = Math.floor(Math.random() * options.length);
-      if (!picked.includes(choice)) {
-        picked.push(choice);
-        return options[choice];
-      }
-    }
+  return ROUND_ALL_OPTIONS.map((options) => {
+    const choice = Math.floor(Math.random() * options.length);
+    return options[choice];
   });
-  return result
 }
 
 
